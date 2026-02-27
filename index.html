@@ -3,275 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshitap 2026-27 | Vile Parle Jain Sangh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Varshitap 2026-27</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --jain-saffron: #FF8C00;
-            --jain-deep-maroon: #660000;
-            --text-main: #2D3436;
-            --border-color: #E0E0E0;
-            --bg-soft: #FDFCFB;
+            --spiritual-maroon: #7B1113;
+            --soft-ivory: #FCF9F2;
+            --accent-gold: #C5A059;
+            --text-dark: #333;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-soft);
-            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--soft-ivory);
             margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
         }
+
+        .content-area { width: 100%; max-width: 600px; }
 
         .mantra-header {
             text-align: center;
             font-family: 'Noto Sans Gujarati', sans-serif;
-            color: var(--jain-deep-maroon);
-            font-size: 14px;
+            color: var(--spiritual-maroon);
+            font-size: 15px;
             font-weight: 700;
-            margin-bottom: 30px;
-            letter-spacing: 0.5px;
-            padding: 12px 20px;
-            background: rgba(255, 140, 0, 0.08);
-            border-radius: 50px;
-            display: block;
-            max-width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid rgba(255, 140, 0, 0.2);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent-gold);
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        .main-wrapper {
             background: #ffffff;
-            padding: 50px 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-top: 8px solid var(--spiritual-maroon);
+            overflow: hidden;
         }
 
-        header {
+        .hero-banner {
+            padding: 50px 30px 30px;
             text-align: center;
-            margin-bottom: 40px;
         }
 
         h1 { 
-            font-family: 'Noto Sans Gujarati', sans-serif; 
-            color: var(--jain-deep-maroon); 
-            margin: 0; 
-            font-size: 22px; 
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .sub-title {
-            color: var(--jain-saffron);
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-top: 10px;
+            font-family: 'Merriweather', serif; 
+            color: var(--spiritual-maroon); 
+            font-size: 32px; 
+            margin: 0;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .form-group { margin-bottom: 28px; }
+        .form-section { padding: 0 30px 40px; }
 
-        label { 
-            display: block; 
-            font-weight: 600; 
-            margin-bottom: 8px; 
-            font-size: 14px;
-            color: #555;
+        .input-group { margin-bottom: 25px; }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
         }
 
-        label span { 
-            display: block; 
-            font-family: 'Noto Sans Gujarati', sans-serif; 
-            color: var(--jain-deep-maroon); 
-            font-size: 15px;
-            margin-top: 2px;
+        label span {
+            display: block;
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            font-size: 16px;
+            color: var(--spiritual-maroon);
+            margin-bottom: 4px;
+            text-transform: none;
         }
 
         input[type="text"], input[type="tel"], input[type="date"], select {
             width: 100%;
-            padding: 14px 16px;
-            border: 1.5px solid var(--border-color);
-            border-radius: 12px;
-            box-sizing: border-box;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 2px solid #EEE;
             font-size: 16px;
-            transition: all 0.2s ease;
-            color: var(--text-main);
-            background: #fdfdfd;
-        }
-
-        input:focus, select:focus {
+            background: transparent;
             outline: none;
-            border-color: var(--jain-saffron);
-            background: #fff;
-            box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+            transition: border-color 0.3s;
+            color: var(--text-dark);
         }
 
-        .tap-selection {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
+        input:focus, select:focus { border-bottom-color: var(--accent-gold); }
 
-        .radio-box {
-            border: 1.5px solid var(--border-color);
-            padding: 14px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
+        .radio-container { display: flex; gap: 15px; margin-top: 10px; }
+        .radio-btn { flex: 1; position: relative; }
+        .radio-btn input { position: absolute; opacity: 0; cursor: pointer; }
+        .radio-label {
+            display: block;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #EEE;
+            border-radius: 6px;
             cursor: pointer;
-            transition: 0.2s;
-            background: #fdfdfd;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .radio-box:hover { background: #fffaf5; border-color: var(--jain-saffron); }
-
-        input[type="radio"] {
-            accent-color: var(--jain-saffron);
-            margin-right: 12px;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
+        .radio-btn input:checked + .radio-label {
+            background: var(--spiritual-maroon);
+            color: white;
+            border-color: var(--spiritual-maroon);
         }
 
-        button {
+        .submit-btn {
             width: 100%;
-            padding: 18px;
-            background: var(--jain-saffron);
+            padding: 16px;
+            background: var(--spiritual-maroon);
             color: white;
             border: none;
-            border-radius: 14px;
+            border-radius: 6px;
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            transition: all 0.3s ease;
             margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.2);
+            transition: opacity 0.3s;
         }
 
-        button:hover { 
-            background: #e67e00; 
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(255, 140, 0, 0.3);
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+        #success-ui { 
+            display: none; 
+            padding: 60px 30px; 
+            text-align: center; 
         }
 
-        button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-bottom: 20px;
-            font-size: 13px;
-            color: #999;
-            font-weight: 500;
-        }
-
-        @media (max-width: 480px) {
-            .container { padding: 35px 20px; }
-            .mantra-header { font-size: 11px; width: 90%; }
-            h1 { font-size: 18px; }
-        }
+        #success-ui h2 { color: var(--spiritual-maroon); font-family: 'Merriweather', serif; }
     </style>
 </head>
 <body>
 
-<div class="mantra-header">
-    શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે
-</div>
+<div class="content-area">
+    <div class="mantra-header">
+        શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે
+    </div>
 
-<div class="container">
-    <header>
-        <h1>શ્રી વિલે પાર્લે શ્વેતાંબર મૂર્તિપૂજક જૈન સંઘ એન્ડ ચેરિટીઝ – વેસ્ટ</h1>
-        <div class="sub-title">VARSHITAP 2026-27</div>
-    </header>
-
-    <form id="registrationForm">
-        <div class="form-group">
-            <label>Full Name <span>પૂરું નામ</span></label>
-            <input type="text" name="fullName" placeholder="Enter full name" required>
+    <div class="main-wrapper" id="form-container">
+        <div class="hero-banner">
+            <h1>VARSHITAP 2026-27</h1>
         </div>
 
-        <div class="form-group">
-            <label>Mobile Number <span>મોબાઇલ નંબર</span></label>
-            <input type="tel" name="mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-        </div>
-
-        <div class="form-group">
-            <label>Date of Birth <span>જન્મ તારીખ</span></label>
-            <input type="date" name="dob" required>
-        </div>
-
-        <div class="form-group">
-            <label>Form Number <span>ફોર્મ નંબર</span></label>
-            <input type="text" name="formNumber" placeholder="Physical form ID" required>
-        </div>
-
-        <div class="form-group">
-            <label>Rushabh Shatrunjay Tap <span>ઋષભ શત્રુંજય તપ</span></label>
-            <div class="tap-selection">
-                <label class="radio-box">
-                    <input type="radio" name="tapType" value="YES" required>
-                    <span>YES / હા</span>
-                </label>
-                <label class="radio-box">
-                    <input type="radio" name="tapType" value="NO">
-                    <span>NO / ના</span>
-                </label>
+        <form id="varshitapForm" class="form-section">
+            <div class="input-group">
+                <label><span>પૂરું નામ</span> Full Name *</label>
+                <input type="text" name="fullName" required>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label>Biyashana Slot Selection <span>સમય પસંદગી</span></label>
-            <select name="slot" required>
-                <option value="" disabled selected>Select timing & seating</option>
-                <option value="8.00-8.45-Down">8.00 to 8.45 AM – Down Sitting</option>
-                <option value="8.00-8.45-Chair">8.00 to 8.45 AM – Table Chair</option>
-                <option value="9.00-9.45-Down">9.00 to 9.45 AM – Down Sitting</option>
-                <option value="9.00-9.45-Chair">9.00 to 9.45 AM – Table Chair</option>
-            </select>
-        </div>
+            <div class="input-group">
+                <label><span>મોબાઇલ નંબર</span> Mobile Number *</label>
+                <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
 
-        <button type="submit" id="submitBtn">SUBMIT REGISTRATION</button>
-    </form>
+            <div class="input-group">
+                <label><span>જન્મ તારીખ</span> Date of Birth *</label>
+                <input type="date" name="dob" required>
+            </div>
+
+            <div class="input-group">
+                <label><span>ફોર્મ નંબર</span> Form Number *</label>
+                <input type="text" name="formNumber" required>
+            </div>
+
+            <div class="input-group">
+                <label><span>ઋષભ શત્રુંજય તપ</span> Rushabh Shatrunjay Tap *</label>
+                <div class="radio-container">
+                    <label class="radio-btn">
+                        <input type="radio" name="tapType" value="YES" required>
+                        <span class="radio-label">YES / હા</span>
+                    </label>
+                    <label class="radio-btn">
+                        <input type="radio" name="tapType" value="NO">
+                        <span class="radio-label">NO / ના</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label><span>સમય પસંદગી</span> Biyashana Slot Selection *</label>
+                <select name="slot" required>
+                    <option value="" disabled selected>Select Slot</option>
+                    <option value="8.00-8.45-Down">8.00 to 8.45 AM – Down Sitting</option>
+                    <option value="8.00-8.45-Chair">8.00 to 8.45 AM – Table Chair</option>
+                    <option value="9.00-9.45-Down">9.00 to 9.45 AM – Down Sitting</option>
+                    <option value="9.00-9.45-Chair">9.00 to 9.45 AM – Table Chair</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">Submit Details</button>
+        </form>
+    </div>
+
+    <div class="main-wrapper" id="success-ui">
+        <h2>Recorded Successfully</h2>
+        <p>તમારો પ્રતિસાદ રેકોર્ડ કરવામાં આવ્યો છે.</p>
+        <p style="color: #666; margin-top: 10px;">Thank you for your submission.</p>
+        <button onclick="location.reload()" style="margin-top:20px; cursor:pointer; padding: 10px 20px;">Submit Another Response</button>
+    </div>
 </div>
-
-<footer>
-    Jin Shasan Dev Ki Jai • Vile Parle Jain Sangh
-</footer>
 
 <script>
+    // Replace this URL if you generate a NEW one from Google Apps Script
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxGqXCN2HtF67ImqlAduW1ooJv5DyRQ_3qdaaNibeeS5tnTSA2bj8si1EhZFabvR__r/exec';
-    const form = document.getElementById('registrationForm');
+    
+    const form = document.getElementById('varshitapForm');
     const btn = document.getElementById('submitBtn');
+    const formContainer = document.getElementById('form-container');
+    const successUI = document.getElementById('success-ui');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
         btn.disabled = true;
-        btn.innerText = "SUBMITTING...";
+        btn.innerText = "Submitting...";
 
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
-                alert("Jai Jinendra! Registration Submitted Successfully.");
-                form.reset();
-                btn.disabled = false;
-                btn.innerText = "SUBMIT REGISTRATION";
+                formContainer.style.display = 'none';
+                successUI.style.display = 'block';
+                window.scrollTo(0,0);
             })
             .catch(error => {
-                alert("Error! Please check your connection or Script Deployment.");
+                alert("Submission failed. Please check your internet or script permissions.");
                 btn.disabled = false;
-                btn.innerText = "SUBMIT REGISTRATION";
+                btn.innerText = "Submit Details";
             });
     });
 </script>
-
 </body>
 </html>

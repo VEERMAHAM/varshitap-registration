@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varshitap 2026-27 | Vile Parle Jain Sangh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --jain-saffron: #FF8C00;
+            --jain-deep-maroon: #660000;
+            --text-main: #2D3436;
+            --border-color: #E0E0E0;
+            --bg-soft: #FDFCFB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-soft);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .mantra-header {
+            text-align: center;
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            color: var(--jain-deep-maroon);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            padding: 10px;
+            background: rgba(255, 140, 0, 0.05);
+            border-radius: 50px;
+            display: block;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 { 
+            font-family: 'Noto Sans Gujarati', sans-serif; 
+            color: var(--jain-deep-maroon); 
+            margin: 0; 
+            font-size: 20px; 
+            font-weight: 700;
+        }
+
+        .sub-title {
+            color: var(--jain-saffron);
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        .form-group { margin-bottom: 28px; }
+
+        label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 8px; 
+            font-size: 14px;
+            color: #555;
+        }
+
+        label span { 
+            display: block; 
+            font-family: 'Noto Sans Gujarati', sans-serif; 
+            color: var(--jain-deep-maroon); 
+            font-size: 15px;
+            margin-top: 2px;
+        }
+
+        input[type="text"], input[type="tel"], input[type="date"], select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid var(--border-color);
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            color: var(--text-main);
+            background: #fff;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--jain-saffron);
+            box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.1);
+        }
+
+        .tap-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .radio-box {
+            border: 1.5px solid var(--border-color);
+            padding: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .radio-box:hover { background: #fffaf5; }
+
+        input[type="radio"]:checked + .radio-box-content { color: var(--jain-saffron); }
+
+        input[type="radio"] {
+            accent-color: var(--jain-saffron);
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background: var(--jain-saffron);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 20px;
+        }
+
+        button:hover { background: #e67e00; }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 20px;
+            font-size: 13px;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 30px 20px; }
+            .mantra-header { font-size: 11px; width: 90%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="mantra-header">
+    શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે
+</div>
+
+<div class="container">
+    <header>
+        <h1>શ્રી વિલે પાર્લે શ્વેતાંબર મૂર્તિપૂજક જૈન સંઘ એન્ડ ચેરિટીઝ – વેસ્ટ</h1>
+        <div class="sub-title">VARSHITAP 2026-27</div>
+    </header>
+
+    <form id="registrationForm">
+        <div class="form-group">
+            <label>Full Name <span>પૂરું નામ</span></label>
+            <input type="text" name="fullName" placeholder="Enter name" required>
+        </div>
+
+        <div class="form-group">
+            <label>Mobile Number <span>મોબાઇલ નંબર</span></label>
+            <input type="tel" name="mobile" placeholder="10-digit number" pattern="[0-9]{10}" required>
+        </div>
+
+        <div class="form-group">
+            <label>Date of Birth <span>જન્મ તારીખ</span></label>
+            <input type="date" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Form Number <span>ફોર્મ નંબર</span></label>
+            <input type="text" name="formNumber" placeholder="Physical form ID" required>
+        </div>
+
+        <div class="form-group">
+            <label>Rushabh Shatrunjay Tap <span>ઋષભ શત્રુંજય તપ</span></label>
+            <div class="tap-selection">
+                <label class="radio-box">
+                    <input type="radio" name="tapType" value="YES" required>
+                    <span>YES / હા</span>
+                </label>
+                <label class="radio-box">
+                    <input type="radio" name="tapType" value="NO">
+                    <span>NO / ના</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Biyashana Slot Selection <span>સમય પસંદગી</span></label>
+            <select name="slot" required>
+                <option value="" disabled selected>Select timing & seating</option>
+                <option value="8.00-8.45-Down">8.00 to 8.45 AM – Down Sitting</option>
+                <option value="8.00-8.45-Chair">8.00 to 8.45 AM – Table Chair</option>
+                <option value="9.00-9.45-Down">9.00 to 9.45 AM – Down Sitting</option>
+                <option value="9.00-9.45-Chair">9.00 to 9.45 AM – Table Chair</option>
+            </select>
+        </div>
+
+        <button type="submit" id="submitBtn">SUBMIT REGISTRATION</button>
+    </form>
+</div>
+
+<footer>
+    Jin Shasan Dev Ki Jai • Vile Parle Jain Sangh
+</footer>
+
+<script>
+    // Replace with your Web App URL from Google Apps Script
+    const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    const form = document.getElementById('registrationForm');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerText = "SUBMITTING...";
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("Jai Jinendra! Registration Submitted Successfully.");
+                form.reset();
+                btn.disabled = false;
+                btn.innerText = "SUBMIT REGISTRATION";
+            })
+            .catch(error => {
+                alert("Error! Please check your connection.");
+                btn.disabled = false;
+                btn.innerText = "SUBMIT REGISTRATION";
+            });
+    });
+</script>
+
+</body>
+</html>

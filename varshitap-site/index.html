@@ -8,42 +8,102 @@
     <style>
         :root { --maroon: #7B1113; --ivory: #FCF9F2; --gold: #C5A059; }
         body { font-family: 'Poppins', sans-serif; background: var(--ivory); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
-        .mantra { text-align: center; font-family: 'Noto Sans Gujarati', sans-serif; color: var(--maroon); font-size: 14px; font-weight: 700; margin-bottom: 20px; border-bottom: 1px solid var(--gold); padding-bottom: 8px; width: 100%; max-width: 600px; }
-        .card { background: #fff; width: 100%; max-width: 550px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-top: 8px solid var(--maroon); padding: 40px 30px; box-sizing: border-box; }
-        h1 { font-family: 'Merriweather', serif; color: var(--maroon); text-align: center; margin: 0 0 20px; font-size: 24px; }
-        .input-group { margin-bottom: 20px; }
-        label { display: block; font-size: 12px; color: #666; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; }
-        label span { display: block; font-family: 'Noto Sans Gujarati', sans-serif; color: var(--maroon); font-size: 15px; text-transform: none; }
-        input, select { width: 100%; padding: 10px 0; border: none; border-bottom: 2px solid #EEE; font-size: 16px; outline: none; background: transparent; }
+        
+        .mantra-header {
+            text-align: center;
+            font-family: 'Noto Sans Gujarati', sans-serif;
+            color: var(--maroon);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1.5px solid var(--gold);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .card { 
+            background: #fff; 
+            width: 100%; 
+            max-width: 550px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-top: 8px solid var(--maroon); 
+            padding: 40px 30px; 
+            box-sizing: border-box; 
+        }
+
+        h1 { font-family: 'Merriweather', serif; color: var(--maroon); text-align: center; margin: 0 0 25px; font-size: 24px; letter-spacing: 1px; }
+        
+        .form-group { margin-bottom: 22px; }
+        label { display: block; font-size: 12px; color: #666; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; }
+        label span { display: block; font-family: 'Noto Sans Gujarati', sans-serif; color: var(--maroon); font-size: 16px; text-transform: none; margin-top: 2px; }
+        
+        input, select { width: 100%; padding: 12px 0; border: none; border-bottom: 2px solid #EEE; font-size: 16px; outline: none; background: transparent; transition: border-color 0.3s; }
         input:focus, select:focus { border-bottom-color: var(--gold); }
-        .radio-container { display: flex; gap: 10px; margin-top: 10px; }
-        .radio-btn { flex: 1; text-align: center; border: 1px solid #EEE; padding: 12px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        
+        .radio-container { display: flex; gap: 12px; margin-top: 12px; }
+        .radio-btn { flex: 1; text-align: center; border: 1.5px solid #EEE; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
         .radio-btn input { display: none; }
         .radio-btn:has(input:checked) { background: var(--maroon); color: white; border-color: var(--maroon); }
-        .btn { width: 100%; padding: 16px; background: var(--maroon); color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 20px; transition: 0.3s; }
-        .btn:hover { opacity: 0.9; }
+
+        .submit-btn { width: 100%; padding: 18px; background: var(--maroon); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .submit-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+
         #success-ui { display: none; text-align: center; }
-        .success-icon { font-size: 60px; margin-bottom: 20px; display: block; }
+        
+        footer { 
+            margin-top: 40px; 
+            text-align: center; 
+            font-size: 13px; 
+            color: #555; 
+            padding: 20px; 
+            border-top: 1px solid rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 550px;
+        }
+        .designer-tag { font-weight: 500; letter-spacing: 0.5px; }
+        .designer-tag span { color: var(--maroon); font-weight: 700; }
     </style>
 </head>
 <body>
-    <div class="mantra">શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આિદનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેિમસૂરયે</div>
+
+    <div class="mantra-header">
+        શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે
+    </div>
 
     <div class="card" id="form-container">
         <h1>VARSHITAP 2026-27</h1>
-        <form id="vForm">
-            <div class="input-group"><label><span>પૂરું નામ</span> Full Name *</label><input type="text" name="fullName" required></div>
-            <div class="input-group"><label><span>મોબાઇલ નંબર</span> Mobile Number *</label><input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="10-digit number" required></div>
-            <div class="input-group"><label><span>જન્મ તારીખ</span> Date of Birth *</label><input type="date" name="dob" required></div>
-            <div class="input-group"><label><span>ફોર્મ નંબર</span> Form Number *</label><input type="text" name="formNumber" required></div>
-            <div class="input-group">
+        <form id="varshitapForm">
+            <div class="form-group">
+                <label><span>પૂરું નામ</span> Full Name *</label>
+                <input type="text" name="fullName" placeholder="Enter Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <label><span>મોબાઇલ નંબર</span> Mobile Number *</label>
+                <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="10-Digit Mobile No." required>
+            </div>
+
+            <div class="form-group">
+                <label><span>જન્મ તારીખ</span> Date of Birth *</label>
+                <input type="date" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label><span>ફોર્મ નંબર</span> Form Number *</label>
+                <input type="text" name="formNumber" placeholder="As per physical form" required>
+            </div>
+
+            <div class="form-group">
                 <label><span>ઋષભ શત્રુંજય તપ</span> Rushabh Shatrunjay Tap *</label>
                 <div class="radio-container">
                     <label class="radio-btn"><input type="radio" name="tapType" value="YES" required> YES / હા</label>
                     <label class="radio-btn"><input type="radio" name="tapType" value="NO"> NO / ના</label>
                 </div>
             </div>
-            <div class="input-group">
+
+            <div class="form-group">
                 <label><span>સમય પસંદગી</span> Biyashana Slot Selection *</label>
                 <select name="slot" required>
                     <option value="" disabled selected>Select Slot</option>
@@ -53,27 +113,32 @@
                     <option value="9.00-9.45 AM (Chair)">9.00-9.45 AM (Chair)</option>
                 </select>
             </div>
-            <button type="submit" class="btn" id="sBtn">Submit Registration</button>
+
+            <button type="submit" class="submit-btn" id="sBtn">Submit Registration</button>
         </form>
     </div>
 
     <div class="card" id="success-ui">
-        <span class="success-icon">🙏</span>
-        <h2 style="color: var(--maroon); margin-top: 0;">Submission Successful</h2>
+        <div style="font-size: 60px; margin-bottom: 20px;">🙏</div>
+        <h2 style="color: var(--maroon); margin-top: 0;">Registration Successful</h2>
         <p>તમારો પ્રતિસાદ સફળતાપૂર્વક રેકોર્ડ કરવામાં આવ્યો છે.</p>
-        <p style="color: #666;">Thank you for registering for the Varshitap 2026-27 program.</p>
-        <button class="btn" onclick="location.reload()" style="background: transparent; border: 1px solid var(--maroon); color: var(--maroon);">Submit Another Response</button>
+        <button class="submit-btn" onclick="location.reload()" style="background: transparent; border: 1px solid var(--maroon); color: var(--maroon);">Submit Another</button>
     </div>
 
+    <footer>
+        <div class="designer-tag">Designed By <span>Parva Arpit Shah</span></div>
+    </footer>
+
     <script>
+        // PASTE YOUR NEW WEB APP URL HERE
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxGqXCN2HtF67ImqlAduW1ooJv5DyRQ_3qdaaNibeeS5tnTSA2bj8si1EhZFabvR__r/exec';
-        const form = document.getElementById('vForm');
+        const form = document.getElementById('varshitapForm');
+        const sBtn = document.getElementById('sBtn');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const btn = document.getElementById('sBtn');
-            btn.disabled = true;
-            btn.innerText = "Submitting...";
+            sBtn.disabled = true;
+            sBtn.innerText = "Submitting...";
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
@@ -82,9 +147,9 @@
                     window.scrollTo(0, 0);
                 })
                 .catch(error => {
-                    alert("Submission failed. Please check your internet connection.");
-                    btn.disabled = false;
-                    btn.innerText = "Submit Registration";
+                    alert("Submission failed. Check your internet connection.");
+                    sBtn.disabled = false;
+                    sBtn.innerText = "Submit Registration";
                 });
         });
     </script>

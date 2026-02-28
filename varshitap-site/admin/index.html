@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Varshitap 2026</title>
+    <style>
+        :root { --maroon: #7B1113; }
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .login-box { max-width: 300px; margin: 100px auto; background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .dashboard { display: none; max-width: 900px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: left; font-size: 14px; }
+        th { background: var(--maroon); color: white; }
+        .stat-card { display: inline-block; padding: 15px; background: #eee; margin: 5px; border-radius: 5px; font-weight: bold; }
+        input[type="password"] { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
+        .btn { background: var(--maroon); color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div id="login" class="login-box">
+        <h3>Admin Access</h3>
+        <input type="password" id="pass" placeholder="Vileparlewestjainsangh">
+        <button class="btn" onclick="checkPass()">Login</button>
+    </div>
+
+    <div id="dash" class="dashboard">
+        <h2>Varshitap 2026 Live Stats</h2>
+        <div id="stats">
+            <div class="stat-card">Total: <span id="totalCount">0</span></div>
+        </div>
+        
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Form No</th>
+                    <th>Slot</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script>
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Use the same URL as before
+        
+        function checkPass() {
+            if(document.getElementById('pass').value === "Sangh2026") { // Set your password here
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('dash').style.display = 'block';
+                loadData();
+            } else {
+                alert("Wrong Password");
+            }
+        }
+
+        function loadData() {
+            // We use the 'id=admin' parameter to tell our script to send ALL data
+            fetch(scriptURL + "?id=admin")
+            .then(res => res.json())
+            .then(data => {
+                const tableBody = document.querySelector("#dataTable tbody");
+                document.getElementById('totalCount').innerText = data.length;
+                
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${row.name}</td><td>${row.mobile}</td><td>${row.form}</td><td>${row.slot}</td>`;
+                    tableBody.appendChild(tr);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

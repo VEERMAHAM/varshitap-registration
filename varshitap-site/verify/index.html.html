@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Pass | Varshitap</title>
+    <title>Verify Pass</title>
     <style>
         body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
         .v-card { background: white; width: 100%; max-width: 400px; padding: 30px; border-radius: 15px; text-align: center; border-top: 10px solid #7B1113; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .success { color: #28a745; font-size: 22px; font-weight: bold; }
-        .fail { color: #dc3545; font-size: 22px; font-weight: bold; }
         .details { text-align: left; background: #fff9f0; padding: 15px; border-radius: 8px; margin-top: 20px; border-left: 5px solid #7B1113; }
     </style>
 </head>
 <body>
     <div class="v-card">
-        <div id="loading">Verifying with Sangh Database...</div>
+        <div id="loading">Verifying Database...</div>
         <div id="result" style="display:none;">
             <div id="icon" style="font-size: 50px;"></div>
             <div id="msg"></div>
@@ -25,7 +24,6 @@
             </div>
         </div>
     </div>
-
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxGqXCN2HtF67ImqlAduW1ooJv5DyRQ_3qdaaNibeeS5tnTSA2bj8si1EhZFabvR__r/exec';
         const params = new URLSearchParams(window.location.search);
@@ -46,9 +44,7 @@
                         document.getElementById('res-form').innerText = fId;
                     } else {
                         document.getElementById('icon').innerText = "❌";
-                        document.getElementById('msg').innerText = "PASS NOT FOUND";
-                        document.getElementById('msg').className = "fail";
-                        document.getElementById('info').style.display = "none";
+                        document.getElementById('msg').innerText = "NOT FOUND";
                     }
                 });
         }

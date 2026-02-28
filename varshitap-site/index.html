@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshitap 2026-27 | Registration</title>
+    <title>Varshitap 2026-27</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -30,7 +30,6 @@
 </head>
 <body>
     <div class="mantra">શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે</div>
-
     <div class="card" id="form-container">
         <h1>VARSHITAP 2026-27</h1>
         <form id="vForm">
@@ -61,9 +60,7 @@
 
     <div class="card" id="success-ui">
         <h2>🙏 Recorded Successfully</h2>
-        <p>Your response and unique pass are ready.</p>
         <button class="btn" id="downloadPass">SAVE PASS TO GALLERY</button>
-        <p style="margin-top:20px; font-size: 12px; color: #888; cursor:pointer;" onclick="location.reload()">Submit Another</p>
     </div>
 
     <div id="pass-preview">
@@ -74,7 +71,6 @@
             <p><strong>FORM NO:</strong> <span id="p_form"></span></p>
             <p><strong>SLOT:</strong> <span id="p_slot" style="color:var(--maroon)"></span></p>
         </div>
-        <div style="font-size: 10px; color: #999; margin-top: 15px;">Show this QR code at the entrance for verification.</div>
     </div>
 
     <script>
@@ -83,21 +79,16 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            document.getElementById('sBtn').disabled = true;
             document.getElementById('sBtn').innerText = "Registering...";
-
             const formNo = document.getElementById('in_form').value;
-            const name = document.getElementById('in_name').value;
-            const slot = document.getElementById('in_slot').options[document.getElementById('in_slot').selectedIndex].text;
-
-            // QR points to the /verify folder on your GitHub
             const verifyLink = window.location.href.split('index.html')[0] + "verify?id=" + formNo;
+            
+            document.getElementById('p_name').innerText = document.getElementById('in_name').value;
+            document.getElementById('p_form').innerText = formNo;
+            document.getElementById('p_slot').innerText = document.getElementById('in_slot').options[document.getElementById('in_slot').selectedIndex].text;
+            
             document.getElementById('qrcode').innerHTML = "";
             new QRCode(document.getElementById("qrcode"), { text: verifyLink, width: 150, height: 150 });
-
-            document.getElementById('p_name').innerText = name;
-            document.getElementById('p_form').innerText = formNo;
-            document.getElementById('p_slot').innerText = slot;
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(() => {

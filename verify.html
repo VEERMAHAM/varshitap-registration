@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pass Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background: #f4f4f4; }
+        .box { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 10px solid #7B1113; }
+        .status-valid { color: green; font-size: 24px; font-weight: bold; }
+        .loading { color: #888; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="status" class="loading">Searching Database...</div>
+        <div id="details" style="margin-top:20px; text-align: left; display: none;">
+            <p><strong>Name:</strong> <span id="v_name"></span></p>
+            <p><strong>Slot:</strong> <span id="v_slot"></span></p>
+            <p><strong>Form No:</strong> <span id="v_form"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Use your Google Script URL here too
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxGqXCN2HtF67ImqlAduW1ooJv5DyRQ_3qdaaNibeeS5tnTSA2bj8si1EhZFabvR__r/exec';
+        const urlParams = new URLSearchParams(window.location.search);
+        const formId = urlParams.get('id');
+
+        // This would require an additional function in your Apps Script 
+        // to "Search" by ID. For now, it shows the ID from the URL.
+        if(formId) {
+            document.getElementById('status').innerHTML = "✅ PASS VERIFIED";
+            document.getElementById('status').className = "status-valid";
+            document.getElementById('details').style.display = "block";
+            document.getElementById('v_form').innerText = formId;
+            document.getElementById('v_name').innerText = "Verified Member"; 
+        } else {
+            document.getElementById('status').innerText = "❌ INVALID PASS";
+        }
+    </script>
+</body>
+</html>

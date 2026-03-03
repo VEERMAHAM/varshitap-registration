@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varshitap 2026-27 | Registration</title>
+    <title>Varshitap 2026-27 | Status</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root { --maroon: #7B1113; --ivory: #FCF9F2; --gold: #C5A059; }
-        body { font-family: 'Poppins', sans-serif; background: var(--ivory); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+        body { font-family: 'Poppins', sans-serif; background: var(--ivory); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
         .mantra-header {
             text-align: center;
@@ -25,45 +25,38 @@
         .card { 
             background: #fff; 
             width: 100%; 
-            max-width: 550px; 
+            max-width: 500px; 
             border-radius: 12px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
             border-top: 8px solid var(--maroon); 
             padding: 40px 30px; 
             box-sizing: border-box; 
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        h1 { font-family: 'Merriweather', serif; color: var(--maroon); text-align: center; margin: 0 0 25px; font-size: 24px; letter-spacing: 1px; }
+        h1 { font-family: 'Merriweather', serif; color: var(--maroon); margin: 0 0 10px; font-size: 24px; }
+        .status-msg { font-size: 16px; font-weight: 600; color: #666; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         
-        .form-group { margin-bottom: 22px; }
-        label { display: block; font-size: 12px; color: #666; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; }
-        label span { display: block; font-family: 'Noto Sans Gujarati', sans-serif; color: var(--maroon); font-size: 16px; text-transform: none; margin-top: 2px; }
+        /* Search Box Styles */
+        .lookup-section { margin-top: 10px; text-align: left; }
+        .lookup-label { font-size: 12px; font-weight: 700; color: var(--maroon); text-transform: uppercase; margin-bottom: 8px; display: block; }
+        .input-group { display: flex; gap: 10px; }
+        input { flex: 1; padding: 12px; border: 1.5px solid #ddd; border-radius: 6px; outline: none; font-size: 16px; transition: 0.3s; }
+        input:focus { border-color: var(--gold); }
+        .btn-search { background: var(--maroon); color: white; border: none; padding: 0 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
         
-        input, select { width: 100%; padding: 12px 0; border: none; border-bottom: 2px solid #EEE; font-size: 16px; outline: none; background: transparent; transition: border-color 0.3s; }
-        input:focus, select:focus { border-bottom-color: var(--gold); }
-        
-        .radio-container { display: flex; gap: 12px; margin-top: 12px; }
-        .radio-btn { flex: 1; text-align: center; border: 1.5px solid #EEE; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
-        .radio-btn input { display: none; }
-        .radio-btn:has(input:checked) { background: var(--maroon); color: white; border-color: var(--maroon); }
+        /* Result Display */
+        #resultBox { display: none; margin-top: 25px; padding: 20px; border-radius: 8px; background: #fdfaf5; border: 1px solid var(--gold); text-align: left; }
+        .res-name { font-size: 18px; font-weight: 700; color: var(--maroon); margin-bottom: 5px; }
+        .res-slot { font-size: 15px; font-weight: 600; color: #333; }
+        .res-label { font-size: 11px; color: #888; text-transform: uppercase; display: block; margin-top: 10px; }
 
-        .submit-btn { width: 100%; padding: 18px; background: var(--maroon); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; margin-top: 10px; transition: 0.3s; }
-        .submit-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+        .contact-box { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+        .contact-header { font-size: 13px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+        .contact-item { font-size: 15px; color: #333; margin-bottom: 5px; }
 
-        #success-ui { display: none; text-align: center; }
-        
-        footer { 
-            margin-top: 40px; 
-            text-align: center; 
-            font-size: 13px; 
-            color: #555; 
-            padding: 20px; 
-            border-top: 1px solid rgba(0,0,0,0.05);
-            width: 100%;
-            max-width: 550px;
-        }
-        .designer-tag { font-weight: 500; letter-spacing: 0.5px; }
-        .designer-tag span { color: var(--maroon); font-weight: 700; }
+        footer { margin-top: auto; padding: 20px; text-align: center; font-size: 12px; color: #888; }
     </style>
 </head>
 <body>
@@ -72,86 +65,67 @@
         શ્રી ચંદ્રપ્રભ સ્વામિ ને નમઃ • શ્રી આદિનાથાય નમઃ • નમો નમઃ શ્રી ગુરુ નેમિસૂરયે
     </div>
 
-    <div class="card" id="form-container">
+    <div class="card">
         <h1>VARSHITAP 2026-27</h1>
-        <form id="varshitapForm">
-            <div class="form-group">
-                <label><span>પૂરું નામ</span> Full Name *</label>
-                <input type="text" name="fullName" placeholder="Enter Full Name" required>
+        <div class="status-msg">Forms Are Now Closed.</div>
+        
+        <div class="lookup-section">
+            <span class="lookup-label">Check Your Allotted Time Slot:</span>
+            <div class="input-group">
+                <input type="text" id="formNo" placeholder="Enter Form Number">
+                <button class="btn-search" onclick="checkStatus()">View</button>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label><span>મોબાઇલ નંબર</span> Mobile Number *</label>
-                <input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="10-Digit Mobile No." required>
-            </div>
+        <div id="resultBox">
+            <span class="res-label">Participant Name:</span>
+            <div class="res-name" id="dispName">---</div>
+            <span class="res-label">Allotted Biyashana Slot:</span>
+            <div class="res-slot" id="dispSlot">---</div>
+        </div>
 
-            <div class="form-group">
-                <label><span>જન્મ તારીખ</span> Date of Birth *</label>
-                <input type="date" name="dob" required>
-            </div>
-
-            <div class="form-group">
-                <label><span>ફોર્મ નંબર</span> Form Number *</label>
-                <input type="text" name="formNumber" placeholder="As per physical form" required>
-            </div>
-
-            <div class="form-group">
-                <label><span>ઋષભ શત્રુંજય તપ</span> Rushabh Shatrunjay Tap *</label>
-                <div class="radio-container">
-                    <label class="radio-btn"><input type="radio" name="tapType" value="YES" required> YES / હા</label>
-                    <label class="radio-btn"><input type="radio" name="tapType" value="NO"> NO / ના</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label><span>સમય પસંદગી</span> Biyashana Slot Selection *</label>
-                <select name="slot" required>
-                    <option value="" disabled selected>Select Slot</option>
-                    <option value="8.00-8.45 AM (Down)">8.00-8.45 AM (Down)</option>
-                    <option value="8.00-8.45 AM (Chair)">8.00-8.45 AM (Chair)</option>
-                    <option value="9.00-9.45 AM (Down)">9.00-9.45 AM (Down)</option>
-                    <option value="9.00-9.45 AM (Chair)">9.00-9.45 AM (Chair)</option>
-                </select>
-            </div>
-
-            <button type="submit" class="submit-btn" id="sBtn">Submit Registration</button>
-        </form>
+        <div class="contact-box">
+            <div class="contact-header">For any queries contact :-</div>
+            <div class="contact-item"><b>Arpit Shah :</b> 9819064663</div>
+            <div class="contact-item"><b>Parva Arpit Shah :</b> 8779572749</div>
+        </div>
     </div>
 
-    <div class="card" id="success-ui">
-        <div style="font-size: 60px; margin-bottom: 20px;">🙏</div>
-        <h2 style="color: var(--maroon); margin-top: 0;">Registration Successful</h2>
-        <p>તમારો પ્રતિસાદ સફળતાપૂર્વક રેકોર્ડ કરવામાં આવ્યો છે.</p>
-        <button class="submit-btn" onclick="location.reload()" style="background: transparent; border: 1px solid var(--maroon); color: var(--maroon);">Submit Another</button>
-    </div>
-
-    <footer>
-        <div class="designer-tag">Designed By <span>Parva Arpit Shah</span></div>
-    </footer>
+    <footer>Designed By <b>Parva Arpit Shah</b></footer>
 
     <script>
-        // PASTE YOUR NEW WEB APP URL HERE
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxGqXCN2HtF67ImqlAduW1ooJv5DyRQ_3qdaaNibeeS5tnTSA2bj8si1EhZFabvR__r/exec';
-        const form = document.getElementById('varshitapForm');
-        const sBtn = document.getElementById('sBtn');
 
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            sBtn.disabled = true;
-            sBtn.innerText = "Submitting...";
+        function checkStatus() {
+            const formNo = document.getElementById('formNo').value.trim();
+            const btn = document.querySelector('.btn-search');
+            const resultBox = document.getElementById('resultBox');
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    document.getElementById('form-container').style.display = 'none';
-                    document.getElementById('success-ui').style.display = 'block';
-                    window.scrollTo(0, 0);
+            if(!formNo) { alert("Please enter your Form Number."); return; }
+
+            btn.disabled = true;
+            btn.innerText = "...";
+
+            fetch(scriptURL + "?id=" + formNo)
+                .then(res => res.json())
+                .then(data => {
+                    if(data.result === 'found') {
+                        document.getElementById('dispName').innerText = data.name;
+                        document.getElementById('dispSlot').innerText = data.slot;
+                        resultBox.style.display = "block";
+                    } else {
+                        alert("Form Number not found. Please check and try again.");
+                        resultBox.style.display = "none";
+                    }
+                    btn.disabled = false;
+                    btn.innerText = "View";
                 })
-                .catch(error => {
-                    alert("Submission failed. Check your internet connection.");
-                    sBtn.disabled = false;
-                    sBtn.innerText = "Submit Registration";
+                .catch(err => {
+                    alert("Error connecting to server.");
+                    btn.disabled = false;
+                    btn.innerText = "View";
                 });
-        });
+        }
     </script>
 </body>
 </html>

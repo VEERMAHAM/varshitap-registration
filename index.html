@@ -6,7 +6,7 @@
     <title>Varshitap 2026-27 | Status</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Noto+Sans+Gujarati:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --maroon: #7B1113; --ivory: #FCF9F2; --gold: #C5A059; }
+        :root { --maroon: #7B1113; --ivory: #FCF9F2; --gold: #C5A059; --whatsapp: #25D366; }
         body { font-family: 'Poppins', sans-serif; background: var(--ivory); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
         
         .mantra-header {
@@ -38,7 +38,6 @@
         h1 { font-family: 'Merriweather', serif; color: var(--maroon); margin: 0 0 10px; font-size: 24px; }
         .status-msg { font-size: 16px; font-weight: 600; color: #666; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
         
-        /* Search Box Styles */
         .lookup-section { margin-top: 10px; text-align: left; }
         .lookup-label { font-size: 12px; font-weight: 700; color: var(--maroon); text-transform: uppercase; margin-bottom: 8px; display: block; }
         .input-group { display: flex; gap: 10px; }
@@ -46,15 +45,32 @@
         input:focus { border-color: var(--gold); }
         .btn-search { background: var(--maroon); color: white; border: none; padding: 0 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
         
-        /* Result Display */
         #resultBox { display: none; margin-top: 25px; padding: 20px; border-radius: 8px; background: #fdfaf5; border: 1px solid var(--gold); text-align: left; }
         .res-name { font-size: 18px; font-weight: 700; color: var(--maroon); margin-bottom: 5px; }
         .res-slot { font-size: 15px; font-weight: 600; color: #333; }
         .res-label { font-size: 11px; color: #888; text-transform: uppercase; display: block; margin-top: 10px; }
 
-        .contact-box { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
-        .contact-header { font-size: 13px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
-        .contact-item { font-size: 15px; color: #333; margin-bottom: 5px; }
+        /* Contact Styling */
+        .contact-box { background: #f9f9f9; padding: 25px 20px; border-radius: 8px; margin-top: 20px; text-align: center; }
+        .contact-header { font-size: 13px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 15px; }
+        .contact-item { font-size: 16px; color: #333; font-weight: 600; margin-bottom: 15px; }
+        
+        .action-btns { display: flex; gap: 10px; justify-content: center; }
+        .action-link { 
+            text-decoration: none; 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 6px; 
+            font-size: 13px; 
+            font-weight: 700; 
+            display: flex; 
+            align-items: center; 
+            gap: 5px; 
+            transition: 0.3s;
+        }
+        .link-call { background: var(--maroon); }
+        .link-wa { background: var(--whatsapp); }
+        .action-link:hover { opacity: 0.85; transform: translateY(-1px); }
 
         footer { margin-top: auto; padding: 20px; text-align: center; font-size: 12px; color: #888; }
     </style>
@@ -86,8 +102,11 @@
 
         <div class="contact-box">
             <div class="contact-header">For any queries contact :-</div>
-            <div class="contact-item"><b>Arpit Shah :</b> 9819064663</div>
-            <div class="contact-item"><b>Parva Arpit Shah :</b> 8779572749</div>
+            <div class="contact-item">Arpit Shah</div>
+            <div class="action-btns">
+                <a href="tel:9819064663" class="action-link link-call">📞 Call Now</a>
+                <a href="https://wa.me/919819064663?text=Jai%20Jinendra%2C%20I%20have%20a%20query%20regarding%20Varshitap%20registration." target="_blank" class="action-link link-wa">💬 WhatsApp</a>
+            </div>
         </div>
     </div>
 
